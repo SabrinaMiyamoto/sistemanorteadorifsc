@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/veiculo.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <title>Cadastro de Veículo</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo LW"></a>
+        </div>
+        
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="main-nav">
+            <a href="index.html#servicos">Serviços</a>
+            <a href="index.html#pilares">Pilares</a>
+            <a href="cadastro.html" class="btn-clean">Cadastrar</a>
+            <a href="veiculo.html">Cadastre seu veículo</a>
+            <a href="agendamento.html">Agendar Lavação</a>
+        </nav>
+    </header>
+
+    <div class="container">        
+        <h1>Cadastro de Veículo</h1>
+        <p>Insira os dados do veículo para a lavação:</p>
+        
+        <form action="#" method="POST" id="form">
+            <div class="form-group">
+                <label for="marca">Marca do Veículo:</label>
+                <input type="text" id="marca" name="marca" placeholder="Ex: Volkswagen, Ford, Toyota..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="modelo">Modelo do Veículo:</label>
+                <input type="text" id="modelo" name="modelo" placeholder="Ex: Gol, Fiesta, Corolla..." required>
+            </div>
+            
+            <div class="form-group">
+                <label for="placa">Número da Placa:</label>
+                <input type="text" id="placa" name="placa" maxlength="7" placeholder="ABC1D23" required>
+            </div>
+            
+            <button type="submit">Cadastrar Veículo</button>
+        </form>
+    </div>
+
+    <footer>
+        <div style="text-align: center;">
+            <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        const placaInput = document.getElementById('placa');
+        placaInput.addEventListener('input', function(e) {
+            let value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+            
+            if (value.length > 7) {
+                value = value.substring(0, 7);
+            }
+            
+            e.target.value = value;
+        });
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

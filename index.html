@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <title>Sistema Norteador</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo LW"></a>
+        </div>
+
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="#servicos">Serviços</a>
+            <a href="#pilares">Pilares</a>
+            <a href="cadastro.html" class="btn-clean">Cadastrar</a>
+            <a href="veiculo.html">Cadastre seu veículo</a>
+            <a href="agendamento.html">Agendar Lavação</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Cuidado Premium para o seu Veículo</h1>
+            <p>Qualidade, agilidade e sustentabilidade em cada lavagem.</p>
+            <a href="agendamento.html" class="btn-primary glow-effect">Agende Sua Lavação</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="bg-light">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <p>Escolha o plano que melhor se encaixa na sua necessidade.</p>
+
+            <div class="servicos-grid">
+                <div class="card">
+                    <h3>Lavação Completa</h3>
+                    <p>Lavagem externa, interna básica e aspiração. O essencial para o dia a dia.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Polimento e Enceramento</h3>
+                    <p>Revitalização da pintura, removendo riscos leves e garantindo brilho duradouro.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Higienização de Motor</h3>
+                    <p>Limpeza técnica e segura do motor, protegendo componentes elétricos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Limpeza Detalhada Interna</h3>
+                    <p>Remoção de manchas nos bancos, teto e carpete, eliminando odores.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Vidrificação</h3>
+                    <p>Aplicação de uma camada protetora de alta resistência e durabilidade sobre a pintura do veículo.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Lavagem a Seco</h3>
+                    <p>Utiliza produtos específicos que encapsulam a sujeira, permitindo a remoção sem uso de água.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pilares">
+        <div class="container">
+            <h2>Nossos Pilares</h2>
+            <p>O que nos move e o que você pode esperar de nós.</p>
+
+            <div class="pilares-list">
+                <div class="pilar">
+                    <h3 style="color: #00ff88;">Sustentabilidade</h3>
+                    <p>Uso eficiente de água e produtos biodegradáveis, cuidando do seu carro e do planeta.</p>
+                </div>
+                <div class="pilar">
+                    <h3 style="color: #ff00ff;">Qualidade</h3>
+                    <p>Processos rigorosos e atenção a cada detalhe, garantindo um resultado impecável.</p>
+                </div>
+                <div class="pilar">
+                    <h3 style="color: #00f5ff;">Tecnologia</h3>
+                    <p>Equipamentos modernos e os melhores produtos do mercado para o seu veículo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

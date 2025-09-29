@@ -1,0 +1,206 @@
+:root {
+    --primary-color: #00f5ff;
+    --secondary-color: #ff00ff;
+    --accent-color: #00ff88;
+    --text-color: #ffffff;
+    --background-dark: #0a0a0a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--background-dark) 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+}
+
+.agendamento-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.agendamento-container h1 {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+.agendamento-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    backdrop-filter: blur(10px);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.servico-option {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.servico-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.servico-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.servico-nome {
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+
+.servico-preco {
+    color: var(--accent-color);
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+}
+
+.servico-option small {
+    color: #cccccc;
+    font-size: 0.8em;
+}
+
+.data-horario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-agendar {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--background-dark);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-agendar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+footer {
+    background: var(--background-dark);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--primary-color);
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .data-horario-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .agendamento-form {
+        padding: 20px;
+    }
+    
+    .agendamento-container h1 {
+        font-size: 2em;
+    }
+}

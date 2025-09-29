@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/cadastro.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <title>Cadastro de Cliente</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo LW"></a>
+        </div>
+        
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="main-nav">
+            <a href="index.html#servicos">Serviços</a>
+            <a href="index.html#pilares">Pilares</a>
+            <a href="cadastro.html" class="btn-clean">Cadastrar</a>
+            <a href="veiculo.html">Cadastre seu veículo</a>
+            <a href="agendamento.html">Agendar Lavação</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cadastro de Cliente</h1>
+        <p>Insira os dados cadastrais da pessoa:</p>
+
+        <form action="#" method="POST" id="form">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço completo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="celular">Número de Celular:</label>
+                <input type="tel" id="celular" name="celular" placeholder="(11) 99999-9999" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="usuario">Nome de Usuário:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Escolha um nome de usuário" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura" required>
+            </div>
+
+            <button type="submit">Cadastrar Cliente</button>
+        </form>
+    </div>
+
+    <footer>
+        <div style="text-align: center;">
+            <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        const celularInput = document.getElementById('celular');
+        celularInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{2})(\d)/, '($1) $2');
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = value;
+            }
+        });
+    </script>
+</body>
+</html>

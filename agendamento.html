@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/agendamento.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <title>Agendar Lavação - Lavação Web</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo LW"></a>
+        </div>
+        
+        <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="main-nav">
+            <a href="index.html#servicos">Serviços</a>
+            <a href="index.html#pilares">Pilares</a>
+            <a href="cadastro.html" class="btn-clean">Cadastrar</a>
+            <a href="veiculo.html">Cadastre seu veículo</a>
+            <a href="agendamento.html">Agendar Lavação</a>
+        </nav>
+    </header>
+
+    <div class="agendamento-container">
+        <h1>Agendar Lavação</h1>
+        <p class="subtitle">Preencha os dados abaixo para agendar seu serviço</p>
+
+        <form class="agendamento-form" action="#" method="POST">
+            <div class="form-section">
+                <h3>📋 Escolha o Serviço</h3>
+                <div class="servicos-grid">
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="lavacao-completa" required>
+                        <span class="servico-nome">Lavação Completa</span>
+                        <span class="servico-preco">R$ 50,00</span>
+                        <small>Lavagem externa, interna e aspiração</small>
+                    </label>
+                    
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="polimento-enceramento">
+                        <span class="servico-nome">Polimento e Enceramento</span>
+                        <span class="servico-preco">R$ 120,00</span>
+                        <small>Revitalização da pintura</small>
+                    </label>
+                    
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="higienizacao-motor">
+                        <span class="servico-nome">Higienização de Motor</span>
+                        <span class="servico-preco">R$ 80,00</span>
+                        <small>Limpeza técnica do motor</small>
+                    </label>
+                    
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="limpeza-detalhada">
+                        <span class="servico-nome">Limpeza Detalhada Interna</span>
+                        <span class="servico-preco">R$ 90,00</span>
+                        <small>Remoção de manchas e odores</small>
+                    </label>
+                    
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="vidrificacao">
+                        <span class="servico-nome">Vidrificação</span>
+                        <span class="servico-preco">R$ 200,00</span>
+                        <small>Proteção de alta resistência</small>
+                    </label>
+                    
+                    <label class="servico-option">
+                        <input type="radio" name="servico" value="lavagem-seco">
+                        <span class="servico-nome">Lavagem a Seco</span>
+                        <span class="servico-preco">R$ 40,00</span>
+                        <small>Sem uso de água</small>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>📅 Data e Horário</h3>
+                <div class="data-horario-grid">
+                    <div class="form-group">
+                        <label for="data">Data Desejada:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="horario">Horário Preferencial:</label>
+                        <select id="horario" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🚗 Dados do Veículo</h3>
+                <div class="data-horario-grid">
+                    <div class="form-group">
+                        <label for="marca">Marca do Veículo:</label>
+                        <input type="text" id="marca" name="marca" placeholder="Ex: Volkswagen, Ford..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" placeholder="Ex: Gol, Fiesta..." required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="placa">Placa do Veículo:</label>
+                    <input type="text" id="placa" name="placa" placeholder="ABC1D23" maxlength="7" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>📝 Observações</h3>
+                <div class="form-group">
+                    <label for="observacoes">Alguma observação especial?</label>
+                    <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Mancha específica no banco, problema no ar condicionado..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-agendar">
+                ✅ Confirmar Agendamento
+            </button>
+        </form>
+    </div>
+
+    <footer>
+        <div style="text-align: center;">
+            <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
+        </div>
+    </footer>
+</body>
+</html>
