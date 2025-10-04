@@ -22,35 +22,6 @@ Este site foi construído utilizando as tecnologias fundamentais para o desenvol
 
 ## 📁 Estrutura do Projeto
 
-O projeto segue uma estrutura de pastas organizada para facilitar a manutenção e a visualização dos arquivos:
-Com certeza! Criar um bom arquivo README.md é fundamental para qualquer projeto, especialmente para trabalhos acadêmicos no IFSC, pois demonstra organização e profissionalismo.
-
-Aqui está um modelo básico e eficiente que você pode usar e adaptar:
-
-📄 README.md (Modelo Básico)
-Markdown
-
-# 🧼 Lavação Web (Lavação de Carros Fictícia)
-
-## 🌟 Visão Geral do Projeto
-
-Este projeto é um exercício prático desenvolvido para o curso de **[Nome da Sua Disciplina no IFSC, ex: Desenvolvimento Web I]** no **Instituto Federal de Santa Catarina (IFSC)**.
-
-O objetivo é simular o website de uma empresa de lavação de carros fictícia, a "Lavação Web", demonstrando a aplicação de conceitos básicos de estruturação e estilo.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-Este site foi construído utilizando as tecnologias fundamentais para o desenvolvimento web front-end:
-
-* **HTML5:** Utilizado para a estruturação semântica do conteúdo da página (cabeçalho, navegação, formulários de agendamento, etc.).
-* **CSS3:** Utilizado para estilização visual, layout responsivo e aplicação das cores definidas no projeto.
-* **[Opcional: JavaScript]:** (Inclua se houver lógica, como menu responsivo ou validação de formulário).
-
----
-
-## 📁 Estrutura do Projeto
 
 O projeto segue uma estrutura de pastas organizada para facilitar a manutenção e a visualização dos arquivos:
 
@@ -75,3 +46,4 @@ Para visualizar este projeto, basta abrir o arquivo **`index.html`** no seu nave
 
 * **Aluno(a):** Sabrina Miyamoto
 * **Professores:** Herval Daminelli e Underlea Cabreira Corrêa 
+
