@@ -25,6 +25,8 @@ header {
     height: 70px;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 0 8px var(--primary-color));
+    border-radius: 50%;
+    
 }
 
 .logo img:hover {

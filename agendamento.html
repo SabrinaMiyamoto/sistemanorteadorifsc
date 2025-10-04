@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/agendamento.css">
     <link rel="stylesheet" href="./style/header.css">
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <title>Agendar Lavação - Lavação Web</title>
 </head>
 <body>
@@ -143,5 +144,14 @@
             <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
         </div>
     </footer>
+    <div id="modalConfirmacao" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-icon">🚗✨</div>
+        <h2 class="modal-title">Agendamento Confirmado!</h2>
+        <p class="modal-message">Sua lavação foi agendada com sucesso!<br>Redirecionando para a página inicial...</p>
+        <button class="modal-btn" onclick="fecharModal()">Continuar</button>
+    </div>
+</div>
+    <script src="./agendamento.js"></script>
 </body>
 </html>
