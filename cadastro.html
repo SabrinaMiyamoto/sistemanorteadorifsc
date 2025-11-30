@@ -73,32 +73,17 @@
             <p>&copy; 2025 Lavação Web. Todos os direitos reservados. | <a href="index.html">Home</a></p>
         </div>
     </footer>
+        <div id="modalConfirmacao" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-icon">🚗✨</div>
+        <h2 class="modal-title">Cadastro realizado</h2>
+        <p class="modal-message">Cadastro realizado com sucesso!<br>Redirecionando para a página de agendamento</p>
+        <button class="modal-btn" onclick="fecharModal()">Continuar</button>
+    </div>
+</div>
 
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mainNav = document.getElementById('main-nav');
+    <script src="./cadastro.js">
 
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
-
-        document.querySelectorAll('#main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
-        });
-
-        const celularInput = document.getElementById('celular');
-        celularInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length <= 11) {
-                value = value.replace(/(\d{2})(\d)/, '($1) $2');
-                value = value.replace(/(\d{5})(\d)/, '$1-$2');
-                e.target.value = value;
-            }
-        });
     </script>
 </body>
 </html>
