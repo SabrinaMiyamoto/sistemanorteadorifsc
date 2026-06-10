@@ -1,4 +1,36 @@
 const form = document.getElementById('form');
+const inputNome = document.getElementById('nome');
+const containerSaudacao = document.getElementById('saudacaoCliente');
+const modalTitulo = document.getElementById('modalTitulo');
+const modalMensagem = document.getElementById('modalMensagem');
+const btnModal = document.getElementById('btnModal');
+
+let acaoModal = 'saudacao'; 
+let temporizadorModal = null; 
+
+if (inputNome && containerSaudacao) {
+    inputNome.addEventListener('blur', function() {
+        const nomeCliente = inputNome.value.trim();
+
+        if (nomeCliente !== '') {
+            acaoModal = 'saudacao';
+            containerSaudacao.textContent = `Olá, ${nomeCliente}!`;
+            modalTitulo.textContent = 'Seja Bem-vindo(a)!';
+            modalMensagem.innerHTML = 'É um prazer ter você no Lavação Web.<br>Por favor, continue preenchendo seus dados abaixo.';
+            if (btnModal) btnModal.textContent = 'Fechar';
+            
+            mostrarModal();
+
+            if (temporizador) {
+                clearTimeout(temporizador);
+            }
+            
+            temporizador = setTimeout(function() {
+                fecharModal();
+            }, 4000);
+        }
+    });
+}
 
 if (form) {
     form.addEventListener('submit', function(e) {
@@ -15,16 +47,20 @@ if (form) {
             try {
                 return JSON.parse(text);
             } catch (err) {
-                console.error('O PHP retornou texto puro em vez de JSON:', text);
-                alert('Erro no Servidor: Verifique o console (F12)');
-                throw new Error('Falha no JSON');
+                throw new Error('Falha ao salvar os dados: ');
             }
         })
         .then(data => {
             if (data.status === 'success') {
+                if (temporizadorModal) {
+                    clearTimeout(temporizadorModal);
+                }
+                acaoModal = 'sucesso';
+                if (containerSaudacao) containerSaudacao.textContent = '';
+                modalTitulo.textContent = 'Cadastro realizado';
+                modalMensagem.innerHTML = 'Cadastro realizado com sucesso!<br>Redirecionando para a página de agendamento';
+                if (btnModal) btnModal.textContent = 'Continuar';
                 mostrarModal();
-            } else {
-                alert('Erro no Banco: ' + data.message);
             }
         })
         .catch(error => console.error('Erro na requisição:', error));
@@ -35,8 +71,17 @@ function mostrarModal() {
     const modal = document.getElementById('modalConfirmacao');
     if(modal) modal.style.display = 'flex';
 }
+
 function fecharModal() {
     const modal = document.getElementById('modalConfirmacao');
-    modal.style.display = 'none';
-    window.location.href = 'agendamento.html';
+    if (modal) modal.style.display = 'none';
+    
+    if (temporizadorModal) {
+        clearTimeout(temporizadorModal);
+        temporizadorModal = null;
+    }
+
+    if (acaoModal === 'sucesso') {
+        window.location.href = 'agendamento.html';
+    }
 }
